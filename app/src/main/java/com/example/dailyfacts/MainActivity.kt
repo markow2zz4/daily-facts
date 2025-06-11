@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.dailyfacts.databinding.ActivityMainBinding
 import com.example.dailyfacts.model.retrofit.RetrofitHelper
 import com.example.dailyfacts.model.retrofit.UselessFactApi
@@ -25,31 +26,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val checkBtn = binding.button
-        val factTv = binding.textView
-
         val uselessFactApi = RetrofitHelper
             .getInstance()
             .create(UselessFactApi::class.java)
 
 
 
-        checkBtn.setOnClickListener {
-            GlobalScope.launch {
+        binding.button.setOnClickListener {
+            lifecycleScope.launch {
                 val result = uselessFactApi.getRandomUselessFact()
 
                 runOnUiThread {
-                    factTv.text = result.text
+                    binding.textView.text = result.text
                 }
             }
         }
-
-
-
-    }
-
-    override fun onStop() {
-        super.onStop()
-        GlobalScope.cancel()
     }
 }
