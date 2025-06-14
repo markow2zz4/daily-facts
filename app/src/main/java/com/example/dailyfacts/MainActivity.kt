@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity() {
             .getInstance()
             .create(UselessFactApi::class.java)
 
-
-
         binding.button.setOnClickListener {
             lifecycleScope.launch {
                 val result = uselessFactApi.getRandomUselessFact()
