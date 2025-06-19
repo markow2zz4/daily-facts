@@ -3,13 +3,19 @@ package com.example.dailyfacts.screens
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.viewpager2.widget.ViewPager2
 import com.example.dailyfacts.databinding.ActivityMainBinding
+import com.example.dailyfacts.model.FactAdapter
 import com.example.dailyfacts.model.retrofit.RetrofitHelper
 import com.example.dailyfacts.model.retrofit.UselessFactApi
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var viewPager: ViewPager2
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,21 +23,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val uselessFactApi = RetrofitHelper
-            .getInstance()
-            .create(UselessFactApi::class.java)
+        viewPager = binding.factViewPager
+        viewPager.adapter = FactAdapter(lifecycleScope)
 
-//        binding.button.setOnClickListener {
-//            lifecycleScope.launch {
-//                val result = uselessFactApi.getRandomUselessFact()
-//
-//                runOnUiThread {
-//                    binding.textView.text = result.text
-//                }
-//            }
-//        }
 
-        binding.button.setOnClickListener {
+        binding.themeBtn.setOnClickListener {
             val intent = Intent(this, ThemeActivity::class.java)
             startActivity(intent)
         }

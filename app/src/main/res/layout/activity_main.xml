@@ -5,38 +5,31 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.MainActivity"
-    android:background="@color/default_bg">
+    android:background="@color/default_bg"
+    tools:context=".screens.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/factViewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_height="match_parent"
 
-        android:fontFamily="@font/caveat_regular"
-        android:text="Каким-то шрифтом это написано было"
-        android:textAlignment="center"
-        android:textSize="28sp"
-        android:textColor="@color/black"
-
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageButton
-        android:id="@+id/button4"
+        android:id="@+id/category_btn"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
 
 
         android:background="@drawable/rounded_button"
+        android:contentDescription="Categories"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_button_category"
 
@@ -44,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/button"
+        android:id="@+id/theme_btn"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +47,7 @@
 
         android:layout_marginBottom="24dp"
         android:background="@drawable/rounded_button"
+        android:contentDescription="Theme"
         android:foreground="?attr/selectableItemBackgroundBorderless"
 
         android:src="@drawable/ic_button_palette"
@@ -61,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/button2"
+        android:id="@+id/favorite_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
@@ -70,22 +64,23 @@
         android:layout_marginEnd="171dp"
 
         android:background="@drawable/rounded_button"
+        android:contentDescription="Favorite"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_button_heart"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/settings_btn"
+        app:layout_constraintStart_toEndOf="@+id/theme_btn" />
 
     <ImageButton
-        android:id="@+id/button3"
+        android:id="@+id/settings_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
 
         android:layout_marginEnd="24dp"
-
         android:background="@drawable/rounded_button"
+        android:contentDescription="Settigns"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_button_settings"
 
