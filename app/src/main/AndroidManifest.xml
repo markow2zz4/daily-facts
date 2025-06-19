@@ -18,10 +18,15 @@
             android:name=".screens.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".screens.MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".screens.ThemeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.CategoryActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".screens.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

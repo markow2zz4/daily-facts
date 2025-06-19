@@ -66,7 +66,7 @@
         android:background="@drawable/rounded_button"
         android:contentDescription="Favorite"
         android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_button_heart"
+        android:src="@drawable/ic_button_heart_outlined"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/settings_btn"

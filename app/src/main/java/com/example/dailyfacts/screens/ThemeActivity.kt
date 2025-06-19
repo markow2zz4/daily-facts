@@ -14,9 +14,9 @@ class ThemeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityThemeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityThemeBinding.inflate(layoutInflater)
-
         super.onCreate(savedInstanceState)
+
+        binding = ActivityThemeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val imageList = listOf(

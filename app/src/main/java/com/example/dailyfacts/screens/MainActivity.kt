@@ -26,9 +26,18 @@ class MainActivity : AppCompatActivity() {
         viewPager = binding.factViewPager
         viewPager.adapter = FactAdapter(lifecycleScope)
 
-
         binding.themeBtn.setOnClickListener {
             val intent = Intent(this, ThemeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.categoryBtn.setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.settingsBtn.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
             startActivity(intent)
         }
     }
