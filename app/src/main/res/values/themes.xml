@@ -6,4 +6,11 @@
     <style name="Theme.DailyFacts" parent="Base.Theme.DailyFacts">
         <item name="android:statusBarColor">@color/default_bg</item>
     </style>
+
+    <style name="TextAppearance.AppCompat.Interface">
+        <item name="android:fontFamily">@font/gabriela_regular</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

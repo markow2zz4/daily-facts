@@ -1,6 +1,6 @@
 package com.example.dailyfacts.model.retrofit
 
-import com.example.dailyfacts.model.UselessFact
+import com.example.dailyfacts.model.data.UselessFact
 import retrofit2.Response
 import retrofit2.http.GET
 

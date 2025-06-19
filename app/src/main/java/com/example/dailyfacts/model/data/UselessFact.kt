@@ -1,4 +1,4 @@
-package com.example.dailyfacts.model
+package com.example.dailyfacts.model.data
 
 data class UselessFact (
     val id: String,
