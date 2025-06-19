@@ -34,6 +34,7 @@ class ThemeActivity : AppCompatActivity() {
         binding.imageButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
