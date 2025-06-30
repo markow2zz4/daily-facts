@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dailyfacts.R
 import com.example.dailyfacts.model.retrofit.RetrofitHelper
@@ -13,7 +14,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FactAdapter(private val lifecycleScope: CoroutineScope):
+class FactAdapter(
+    private val lifecycleScope: CoroutineScope,
+    private val fontResId: Int // передаём ID шрифта
+):
     RecyclerView.Adapter<FactAdapter.FactViewHolder>() {
 
     inner class FactViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -30,6 +34,10 @@ class FactAdapter(private val lifecycleScope: CoroutineScope):
 
     override fun onBindViewHolder(holder: FactViewHolder, position: Int)
     {
+
+        val typeface = ResourcesCompat.getFont(holder.itemView.context, fontResId)
+        holder.factText.typeface = typeface
+
         lifecycleScope.launch {
             try {
                 val uselessFactApi = RetrofitHelper

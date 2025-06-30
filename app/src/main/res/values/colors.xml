@@ -5,6 +5,14 @@
     <color name="default_bg">#FFEFEF</color>
     <color name="default_button">#FBDEDE</color>
     <color name="ripple_effect">#22000000</color>
+    <color name="grey">#5A5A5A</color>
+
+
+    <color name="background_red">#FCB3AD</color>
+    <color name="background_yellow">#FFE8A3</color>
+    <color name="background_purple">#F5C0EF</color>
+
+
 
 
 </resources>
